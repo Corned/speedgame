@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__header {
+  margin: 0 auto;
+  font-size: 5em;
+}
