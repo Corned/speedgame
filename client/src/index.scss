@@ -12,3 +12,19 @@ body {
   padding: 20px;
   background: rgb(252, 252, 252);
 }
+
+button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5em;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
