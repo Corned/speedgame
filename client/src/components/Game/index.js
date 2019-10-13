@@ -11,7 +11,7 @@ const Game = () => {
   const [ target, setTarget ] = useState(0)
   const [ buttonCount, setButtonCount ] = useState(4)
 
-  setTimeout(() => setScore(score + 1))
+  //setTimeout(() => setScore(score + 1), 2)
 
   return (
     <div className="game">

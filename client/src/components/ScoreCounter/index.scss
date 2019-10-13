@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .score-counter {
   text-align: center;
   font-weight: bold;
@@ -8,11 +10,19 @@
     font-size: 3em;
   }
 
-  & > .score-counter__light {
-    color: rgb(190, 190, 190);
+  & > .score-counter__muted {
+    color: $on-primary-muted;
+
+    @media (prefers-color-scheme: dark)  {
+      color: $on-primary-muted-dark;
+    }
   }
 
   & > .score-counter__dark {
-    color: #333333;
+    color: $on-primary;
+
+    @media (prefers-color-scheme: dark)  {
+      color: $on-primary-dark;
+    }
   }
 }
