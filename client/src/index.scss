@@ -13,13 +13,22 @@
   }
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   padding: 20px;
   background: $primary;
 
   @media (prefers-color-scheme: dark) {
     background: $primary-dark;
   }
+}
+
+#root {
+  height: 100%;
 }
 
 button {
