@@ -3,12 +3,12 @@
 .app {
   display: flex;
   flex-direction: column;
-  justify-content: center;;
+  justify-content: center;
   height: 100%;
 }
 
 .app__header {
   margin: 0 auto;
   font-size: 5em;
-  margin-bottom: 0.3em;
+  text-align: center;
 }

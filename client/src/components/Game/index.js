@@ -13,10 +13,15 @@ const Game = () => {
 
   //setTimeout(() => setScore(score + 1), 2)
 
+  const handleClick = (buttonIndex) => (event) => {
+    event.preventDefault()
+    setTarget(buttonIndex)
+  }
+
   return (
     <div className="game">
       <ScoreCounter score={score}/>
-      <Buttons count={buttonCount} target={target} failure={false}/>
+      <Buttons count={buttonCount} target={target} failure={false} handleClick={handleClick}/>
     </div>
   )
 }

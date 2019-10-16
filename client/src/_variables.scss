@@ -1,3 +1,4 @@
+// Light colors
 $primary: rgb(252, 252, 252);
 $secondary: rgb(226, 226, 226);
 $error: #B00020;
@@ -7,8 +8,7 @@ $on-primary-muted: rgb(190, 190, 190);
 $on-secondary: #222222;
 $on-error: white;
 
-
-
+// Dark colors
 $primary-dark: rgb(32, 32, 32);
 $secondary-dark: rgb(82, 82, 82);
 $error-dark: #B00020;
@@ -17,3 +17,6 @@ $on-primary-dark: #dddddd;
 $on-primary-muted-dark: rgb(109, 109, 109);
 $on-secondary-dark: #cecece;
 $on-error-dark: white;
+
+// Screen
+$max-width: 670px;

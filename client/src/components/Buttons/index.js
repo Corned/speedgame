@@ -3,7 +3,15 @@ import classnames from "classnames"
 
 import "./index.scss"
 
-const Buttons = ({ count, target, failure }) => {
+const Buttons = (props) => {
+  const {
+    count,
+    target,
+    failure,
+    handleClick,
+  } = props
+
+
   return (
     <div className="game__buttons">
       {new Array(count).fill(0).map((_, index) => {
@@ -13,7 +21,7 @@ const Buttons = ({ count, target, failure }) => {
         )
         
         return (
-          <button className={classes} key={index}>
+          <button className={classes} key={index} onClick={handleClick(index + 1)}>
             { index + 1}
           </button>
         )
