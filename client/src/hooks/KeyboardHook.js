@@ -19,9 +19,11 @@ const KeyboardHook = () => {
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown)
+    document.addEventListener("keyup", handleKeyUp)
 
     return () => {
-      document.removeEventListener("keydown")
+      document.removeEventListener("keydown", handleKeyDown)
+      document.removeEventListener("keyup", handleKeyUp)
     }
   })
 
