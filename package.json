@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start:client && npm run start:server",
+    "start": "npm run start:server",
     "start:client": "bash build.sh",
     "start:server": "npm run start",
     "dev": "concurrently 'npm:dev:client' 'npm:dev:server'",
     "dev:client": "cd client && npm start",
     "dev:server": "cd server && npm run dev",
-    "install:client": "cd client && npm install",
+    "install:client": "bash build.sh",
     "install:server": "cd server && npm install",
     "postinstall": "npm run install:client && npm run install:server"
   },
