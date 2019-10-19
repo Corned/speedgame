@@ -7,7 +7,6 @@ import "./index.scss"
 function App() {
   return (
     <div className="app">
-      <h1 className="app__header">Speed Game</h1>
       <Game/>
     </div>
   )

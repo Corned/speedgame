@@ -20,6 +20,7 @@
   margin: 5px;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  color: transparent;
 
   &.active {
     background: rgb(150, 221, 42);
@@ -27,6 +28,9 @@
 
   &.failure {
     background: rgb(255, 53, 53);
-    color: white;
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 }
