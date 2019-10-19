@@ -11,37 +11,43 @@ const Game = () => {
   const [ target, setTarget ] = useState(0)
   const [ buttonCount ] = useState(4)
   const [ gameEnded, setGameEnded ] = useState(false)
-
-  const delay = Math.max(1200 - (Math.floor(speed) * 20), 600)
+  const [ isMiddleOfRound, setIsMiddleOfRound ] = useState(false)
 
   useEffect(() => {
     if (gameEnded) {
       return
     }
 
-    const randomTarget = 1 + Math.floor(Math.random() * 4)
-    setTarget(randomTarget)
+    if (!isMiddleOfRound) {
+      const randomTarget = 1 + Math.floor(Math.random() * 4)
+      const delay = Math.max(1200 - (Math.floor(speed) * 20), 500)
 
-    const timer = setTimeout(() => {
-      if (target != 0) {
-        // user failed to react in time
-        setTarget(0)
-        setGameEnded(true)
-        return
-      }
+      setTarget(randomTarget)
+      const timer = setTimeout(() => {
+        setIsMiddleOfRound(true)
+      }, delay)
 
-      setSpeed(speed + 1)
-    }, delay)
+      return () => clearTimeout(timer)
+    }
 
-    return () => clearTimeout(timer)
-  }, [ speed, gameEnded ])
+    if (target === 0) {
+      // round cleared?
+      setSpeed(speed => speed + 1)
+      setIsMiddleOfRound(false)
+      return
+    }
+
+    // player failed
+    setGameEnded(true)
+    
+  }, [ isMiddleOfRound, gameEnded ])
 
   const handleClick = (buttonIndex) => (event) => {
     event.preventDefault()
 
     if (buttonIndex === target) {
-      setTarget(0)
       setScore(score + 1)
+      setTarget(0)
       return
     }
     
@@ -57,6 +63,7 @@ const Game = () => {
         failure={gameEnded} 
         handleClick={handleClick}
       />
+      <p>time to react: {Math.max(1200 - (Math.floor(speed) * 20), 500)}ms</p>
     </div>
   )
 }

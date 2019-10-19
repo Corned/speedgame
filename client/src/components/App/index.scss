@@ -5,6 +5,11 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  border: 2px solid red;
+
+  & > * {
+    margin: 0 auto;
+  }
 }
 
 .app__header {
