@@ -4,14 +4,10 @@ const KeyboardHook = () => {
   const [ key, setKey ] = useState(null)
 
   const handleKeyDown = (event) => {
-    event.preventDefault()
-
     setKey(event.key)
   }
 
   const handleKeyUp = (event) => {
-    event.preventDefault()
-
     if (key === event.key) {
       setKey(null)
     }

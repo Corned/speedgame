@@ -32,6 +32,10 @@ body {
   height: 100%;
 }
 
+.error {
+  color: $error;
+}
+
 button {
   background: $secondary;
   color: $on-secondary;
