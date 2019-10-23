@@ -1,14 +1,15 @@
 import React from "react"
-
-import Game from "components/Game"
+import { BrowserRouter as Router } from "react-router-dom"
+import Routes from "constants/Routes"
 
 import "./index.scss"
 
 function App() {
   return (
     <div className="app">
-      <h1 className="app__header">Speed Game</h1>
-      <Game/>
+      <Router>
+        { Routes }
+      </Router>
     </div>
   )
 }
