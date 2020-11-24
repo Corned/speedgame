@@ -1,7 +1,5 @@
 # speedgame
 
-[play here](http://speed.owo.fi)
-
 ## Setting up
 
 1. Run `npm install` in `./`. This should automatically run the `postinstall` script.
